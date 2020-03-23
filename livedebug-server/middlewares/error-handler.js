@@ -4,7 +4,7 @@ module.exports = function(err, req, res, next) {
     res.status(err.code).json({
       message: err.resource + ' not found',
     });
-  } else if (stringifiedErr.indexOf('SequelizeValidationError') === -1) {
+  } else if (stringifiedErr.indexOf('SequelizeValidationError') !== -1) {
     const validateErrors = err.errors;
     const errors = [];
 

@@ -58,7 +58,6 @@ describe('Loan Routes Test', () => {
         .send(data)
         .then(response => {
           const { body, status } = response;
-          console.log(body, '=================================================')
           expect(status).toBe(201);
           expect(body).toHaveProperty('id', expect.any(Number));
           expect(body).toHaveProperty('MemberId', data.MemberId);
